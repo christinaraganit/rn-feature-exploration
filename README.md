@@ -8,8 +8,9 @@ Christina Raganit \
 https://github.com/christinaraganit/rn-feature-exploration 
 
 ## Demo
-<video src="https://github.com/christinaraganit/rn-feature-exploration/blob/main/silly-soundboard/assets/demo/demo_android.mp4" width="500" controls></video>
-<video src="https://github.com/christinaraganit/rn-feature-exploration/blob/main/silly-soundboard/assets/demo/demo_ios.mp4" width="500" controls></video>
+https://github.com/user-attachments/assets/5d9b0756-ad94-48df-8a8e-e5f680501bb2
+
+https://github.com/user-attachments/assets/b3fb3efb-f993-4cf6-ab1f-ce6aec2cb6a0
 
 ## Research & Innovation
 For this project, I explored audio playback using Expo’s ```expo-av```. This feature allows a React Native app to record, play, and control audio files directly from an iOS or Android app. I chose this feature because it’s interactive and media-driven (and also because I refuse to pay for Discord Nitro, so I wanted to build a soundboard of my own.)
@@ -49,7 +50,7 @@ sound.setOnPlaybackStatusUpdate(status => {
                        }
                      });
 ```
-This approach avoids overlapping sounds.
+This approach avoids overlapping sounds. You can see this in action in the demos above!
 ## Challenges and Solutions
 ### Challenge #1
 Multiple sounds could overlap when tapping tiles repeatedly. I introduced a currentSound state that locks playback until the active sound finishes.
