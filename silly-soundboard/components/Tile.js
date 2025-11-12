@@ -13,17 +13,18 @@ export default function Tile({ label, icon, onPress }) {
 
     // compute tile size based on avail. safe space and spacing
     const tileWidth = (screenWidth - (parentPadding * 2) - (tileMargin)) / 2;
-    const tileHeight = (safeHeight - 48 - (parentPadding * 2) - (tileMargin * 3)) / 4;
+    const tileHeight = (safeHeight - 52 - (parentPadding * 2) - (tileMargin * 3)) / 4;
 
     return (
         <TouchableOpacity onPress={onPress} style={{
             ...styles.tile,
             width: tileWidth,
             height: tileHeight,
-            paddingTop: tileWidth / 5 // top padding scales with tile width
         }}>
-            <View style={styles.iconContainer}>
-                <Image source={icon} style={styles.icon} />
+            <View style={styles.iconView}>
+                <View style={styles.iconCircle}>
+                    <Image source={icon} style={styles.icon} />
+                </View>
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.tileText}>{label}</Text>
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     },
     tileText: {
         color: 'white',
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: '600',
         textAlign: 'center',
         width: "100%"
@@ -51,14 +52,21 @@ const styles = StyleSheet.create({
     textContainer: {
         position: "absolute",
         bottom: 12,
-        height: 34,
+        height: "40%",
+        paddingTop: 4,
         paddingLeft: 8,
         paddingRight: 8,
         width: "100%",
         display: "flex",
         justifyContent: "center"
     },
-    iconContainer: {
+    iconView: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "60%",
+    },
+    iconCircle: {
         width: 72,
         height: 72,
         backgroundColor: "#2E2D39",
